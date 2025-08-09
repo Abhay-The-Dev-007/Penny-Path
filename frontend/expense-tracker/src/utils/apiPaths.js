@@ -1,4 +1,4 @@
-export const BASE_URL = "https://penny-path.onrender.com"
+export const BASE_URL = "https://penny-path-backend.onrender.com"
 
 // utils/apiPaths.js
 export const API_PATHS = {

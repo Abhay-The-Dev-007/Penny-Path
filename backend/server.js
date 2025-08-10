@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
     cors({
-        origin: process.env.CLIENT_URL || "https://penny-path-backend.onrender.com",
+        origin: process.env.CLIENT_URL || "*",
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })

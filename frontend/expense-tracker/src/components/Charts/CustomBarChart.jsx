@@ -45,7 +45,7 @@ const CustomBarChart = ({data}) => {
 
                 <Bar 
                     dataKey="amount"
-                    fill="#FF8042"
+                    fill="#F54927"
                     radius={[10, 10, 0, 0]}
                     activeDot={{ r: 8, fill: "yellow" }}
                     activeStyle={{ fill: "green" }}

@@ -31,12 +31,19 @@ app.use("/api/v1/expense", expenseRoutes)
 app.use("/api/v1/dashboard", dashboardRoutes);
 
 
-// serve uploads folder
+// Serve uploads folder
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+// Serve static frontend files
+if (process.env.NODE_ENV === "production") {
+    // Path: backend/../frontend/expense-tracker/dist
+    app.use(express.static(path.join(__dirname, "../frontend/expense-tracker/dist")));
+}
+
+// Catch-all for React Router (MUST BE LAST)
 if (process.env.NODE_ENV === "production") {
     app.use((req, res) => {
-        res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+        res.sendFile(path.join(__dirname, "../frontend/expense-tracker/dist/index.html"));
     });
 }
 
